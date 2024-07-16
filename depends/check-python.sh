@@ -8,5 +8,5 @@
 pyprefix=$(python-config --prefix)
 [ $? -eq 0 ] || { echo "ERROR: Install python-dev before continuing."; exit 1; }
 
-## Check for python header files
-( ls -1d "${pyprefix}"/include/python[23].*/Python.h || ls -1d /opt/local/include/python[23].*/Python.h ) 1>/dev/null 2>&1 || [ -f "$PYINSTALLDIR/include/Python.h" ] || { echo "ERROR: Install python-dev before continuing."; exit 1; }
+## Check for python header files 
+( ls -1d "${pyprefix}"/include/python[23].*/Python.h || ls -1d /opt/homebrew/opt/python3/Frameworks/Python.framework/Headers/Python.h ) 1>/dev/null 2>&1 || [ -f "$PYINSTALLDIR/include/Python.h" ] || { echo "ERROR: Install python-dev before continuing."; exit 1; }
